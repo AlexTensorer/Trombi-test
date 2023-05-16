@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trombin O'clock</title>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap-reboot.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Trombin O'clock</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Accueil</a></li>
+                <li><a href="/promos">Promos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+<h1>Ajouter un étudiant</h1>
+
+<form action="/add-action" method="POST">
+    <p>
+        <label for="promo">Promo</label>
+        <select name="promo" id="promo">
+            <% for (const promo of promos) { %>
+            <option value="<%=promo.name%>"><%= promo.name%></option>
+            <% } %>
+        </select>
+    </p>
+    <p>
+        <label>Prénom</label>
+        <input type="text" id="first_name" name="first_name" placeholder="Prénom">
+    </p>
+    <p>
+        <label>Nom</label>
+        <input type="text" id="last_name" name="last_name" placeholder="Nom">
+    </p>
+    <p>
+        <label>Pseudo Github</label>
+        <input type="text" id="github_username" name="github_username" placeholder="Pseudo">
+    </p>
+    <p>
+        <button type="submit">Valider</button>
+    </p>
+</form>
+
+</main>
+<footer>
+    <p>© O'clock</p>
+</footer>
+</body>
+</html>
